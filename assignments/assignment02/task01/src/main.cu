@@ -90,16 +90,16 @@ int main() {
     // Multiply by 2 due to DDR (Double Data Rate)
     double memBandwidth = 2.0 * (double)memClockRate * 1000.0 * (busWidth / 8.0) / 1.0e9;
 
-    // Peak Compute Performance (GFLOPS)
+    // Peak Compute Performance (TFLOPS)
     // Formula: SMs * CoresPerSM * Clock * 2 (Fused Multiply Add, two ops in one clock)
     int coresPerSM = getCoresPerSM(devProp.major, devProp.minor);
-    double peakPerformance = (double)smCount * coresPerSM * (clockRate * 1000.0) * 2.0 / 1.0e9;
+    double peakPerformance = (double)smCount * coresPerSM * (clockRate * 1000.0) * 2.0 / 1.0e12;
 
     std::cout << "\n--- Calculated Performance ---" << std::endl;
     std::cout << "Cores per SM (Architecture Specific): " << coresPerSM << std::endl;
     std::cout << "Total CUDA Cores: " << smCount * coresPerSM << std::endl;
     std::cout << "Max Global Memory Bandwidth: " << memBandwidth << " GB/s" << std::endl;
-    std::cout << "Peak Compute Performance: " << peakPerformance << " GFLOPS" << std::endl;
+    std::cout << "Peak Compute Performance: " << peakPerformance << " TFLOPS" << std::endl;
 
     return 0;
 }

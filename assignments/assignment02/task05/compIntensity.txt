@@ -1,0 +1,9 @@
+for (size_t k = 0; k < colsA; k++) {
+            parSum += A[row*colsA + k] * B[k*colsB + col];
+}
+
+per thread
+reading 2 doubles = 16 bytes
+doing tileSize multiplication and tileSize addition = 2 ops
+
+total computational intensity = tileSize (32) * 2 / 16 = 4 ops/byte
