@@ -1,0 +1,9 @@
+for (size_t k = 0; k < colsA; k++) {
+            parSum += A[row*colsA + k] * B[k*colsB + col];
+}
+
+per iteration
+reading 2 doubles = 16 bytes
+doing 1 multiplication and 1 addition = 2 ops
+
+total computational intensity = 2 / 16 = 0.125 ops/byte
