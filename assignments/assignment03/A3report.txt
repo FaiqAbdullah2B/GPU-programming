@@ -1,3 +1,6 @@
 
+Github Repo Link: https://github.com/FaiqAbdullah2B/GPU-programming/tree/main/assignments/assignment03
 
 For the denoising code, implement thread tiling gave a performance speedup of around 200x plus
+
+For edge detection kernal, tiling and GPU programming resulted in a speedup of 20x plus
